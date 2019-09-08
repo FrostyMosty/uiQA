@@ -46,4 +46,6 @@ public class RegistrationPage {
     public void clickButton(){
         Selenide.$(buttonRegistration).click();
     }
+    // Exit
 }
+

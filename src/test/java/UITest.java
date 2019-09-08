@@ -44,11 +44,11 @@ public class UITest {
 
         RegistrationPage registrationPage = new RegistrationPage();
 
-        registrationPage.validLastName();
-        registrationPage.validFirstName();
-        registrationPage.validTelephoneNumber();
-        registrationPage.validMail();
-
+        registrationPage.sendLastName("Иванов");
+        registrationPage.sendFirstName("Иван");
+        registrationPage.sendTelephoneNumber("9999999999");
+        registrationPage.sendMail("abc@gmail.com");
+        registrationPage.clickButton();
     }
 
     @Test
@@ -56,11 +56,10 @@ public class UITest {
         Selenide.open("https://esia.gosuslugi.ru/registration/");
 
         RegistrationPage registrationPage = new RegistrationPage();
-
-        registrationPage.invalidLastName();
-        registrationPage.validFirstName();
-        registrationPage.validTelephoneNumber();
-        registrationPage.validMail();
+        registrationPage.sendLastName("Иванов");
+        registrationPage.sendFirstName("123");
+        registrationPage.sendTelephoneNumber("9999999999");
+        registrationPage.sendMail("abc@gmai.com");
         registrationPage.clickButton();
 
         String error = Selenide.$(By.xpath("//*[@id=\"lastName\"]")).getText();

@@ -11,37 +11,23 @@ public class RegistrationPage {
     By mail = By.xpath("//*[@id=\"email\"]");
     By buttonRegistration = By.xpath("//*[@id=\"tryReg\"]/span");
 
-    public void validLastName(){
-        Selenide.$(lastName).setValue("Иванов");
+    public void sendLastName(String text){
+        Selenide.$(lastName).setValue(text);
     }
 
-    public void invalidLastName(){
-        Selenide.$(lastName).setValue("123%^");
+    public void sendFirstName(String text){
+        Selenide.$(firstName).setValue(text);
     }
 
-    public void validFirstName(){
-        Selenide.$(firstName).setValue("Иван");
+
+    public void sendTelephoneNumber(String text){
+        Selenide.$(telephoneNumber).setValue(text);
     }
 
-    public void invalidFirstName(){
-        Selenide.$(firstName).setValue("092&^%");
+    public void sendMail(String text){
+        Selenide.$(mail).setValue(text);
     }
 
-    public void validTelephoneNumber(){
-        Selenide.$(telephoneNumber).setValue("9991234567");
-    }
-
-    public void invalidTelephoneNumber() {
-        Selenide.$(telephoneNumber).setValue("99912345");
-    }
-
-    public void validMail(){
-        Selenide.$(mail).setValue("abc@gmail.com");
-    }
-
-    public void invalidMail(){
-        Selenide.$(mail).setValue("abc@@gmail.com");
-    }
 
     public void clickButton(){
         Selenide.$(buttonRegistration).click();
